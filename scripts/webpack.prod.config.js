@@ -19,7 +19,7 @@ const webpackConfigProd = {
   },
 
   output: {
-    filename: 'change-button.js',
+    filename: 'hz-react-component.js',
     path: resolve('../lib'), 
     libraryTarget:'commonjs2'
   },
