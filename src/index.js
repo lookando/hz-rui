@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HzButton ,HzDropdown} from '@/components/index';
+import { HzButton, HzDropdown ,HzDatepicker,HzInput} from '@/components/index';
 // import Icon from 'svg-react-loader?./svg/my-icon.svg';
 import { ReactComponent as Add } from '@/svg/add.svg';
 import { ReactComponent as Like } from '@/svg/like.svg';
+import { GlobalStyle } from './style'
+
 const App = () => {
   return (
     <>
+      <GlobalStyle />
       <div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <HzButton onClick={() => {
@@ -37,9 +40,21 @@ const App = () => {
 
 
       </div>
+      <div>--------------------------------------------------------</div>
+
       <div>
         <HzDropdown></HzDropdown>
       </div>
+      <div>--------------------------------------------------------</div>
+      <div>
+        <HzInput></HzInput>
+      </div>
+      <div>--------------------------------------------------------</div>
+
+      <div>
+        <HzDatepicker></HzDatepicker>
+      </div>
+ 
     </>
 
   )

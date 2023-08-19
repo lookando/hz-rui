@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 // css
 const Btn = styled.div`
   .hov{
@@ -9,22 +8,20 @@ const Btn = styled.div`
     }
   }
   .hov_before{
-    /* opacity: 0; */
-    position: absolute;
-    transform-origin: top center;
-    /* transition:delay 0.1s, transform 0.15s ease, opacity 0.15s ease; */
+    opacity: 0;
     transform:scaleY(0);
+    position: absolute;
   }
   .hov_after{
-    z-index:10;
+
     transform:scaleY(1);
     transform-origin: top center;
-    transition: transform 0.20s ease, opacity 0.20s ease;
+    transition: transform 0.03s ease, opacity 0.03s ease;
     cursor:pointer;
     position: absolute;
     background: #fff;
     opacity: 1;
-    width:${props => props.width}px;
+    width:120px;
     border-radius: 6px;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
      div{
