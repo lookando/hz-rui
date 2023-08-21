@@ -47,7 +47,7 @@ const App = () => {
       </div>
       <div>--------------------------------------------------------</div>
       <div>
-        <HzInput></HzInput>
+        <HzInput blur={()=>{console.log(222);}} focus={()=>{console.log(111);}} change={()=>{console.log(333);}}></HzInput>
       </div>
       <div>--------------------------------------------------------</div>
 
