@@ -1,23 +1,23 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef ,forwardref} from "react";
 import Btn from '@/components/hz-input/style'
 
 
 const HzInput = (props) => {
-  const {focus,change,blur} = props
+  const { focus, change, blur, value, inputRef} = props
   const handleClick = e => {
     return focus;
   };
-  const handleChange = e =>{
+  const handleChange = e => {
     return change;
   }
-  const handleBlur = e =>{
+  const handleBlur = e => {
     return blur;
   }
   return <Btn>
     <div>
-      <input onBlur={handleBlur()} onFocus={handleClick()} onChange={handleChange()} ></input>
+      <input type='text' ref={inputRef}  onBlur={handleBlur()} onFocus={handleClick()} onChange={handleChange()} value={value}></input>
     </div>
   </Btn>
-};
+}
 
 export default HzInput

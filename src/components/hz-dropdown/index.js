@@ -1,37 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Btn from '@/components/hz-dropdown/style'
 
 const HzDropdown = () => {
-  const [hov, setHov] = useState('hov_before')
   let timer
+  let close_dropdown = () => {
+    setTimeout(() => {
+      menu.style.animation = "slide_out 350ms"
+    }, 200)
+    clearTimeout(timer)
+    setTimeout(() => {
+      menu.style.display = "none";
+    }, 250)
+  }
+  let open_dropdown = () => {
+    clearTimeout(timer)
+    setTimeout(() => {
+      menu.style.display = "block";
+      menu.style.animation = "slide_in 250ms"
+
+    }, 250)
+  }
+  let out = () => {
+    if (window.event.toElement.id != "menu" && window.event.toElement.id != "link" && window.event.toElement.id != "menu_ui" && window.event.toElement.id != "menu_li") {
+      close_dropdown()
+    }
+
+  }
   return <Btn width={120}>
     <>
-      <div>
-        <a className="hov" onMouseEnter={() => {
-          clearTimeout(timer);
-          timer = setTimeout(() => {
-            //根据官网事例，必须在enter和leave里面调用done函数，不然过渡动画不生效（切记）
-            setHov('hov_after');
-          }, 250);
-        }} onMouseLeave={() => {
-          setHov('hov_before')
-        }}>
-          dropdown
-        </a>
-      </div>
-      <div   className={hov} onMouseEnter={() => {
-        setHov('hov_after');
-      }} onMouseLeave={() => {
-        setHov('hov_before')
+      <div onMouseOut={() => {
+        out()
       }}>
         <div>
-          <li onClick={()=>{console.log(11);}}>1st</li>
-          <li>2st</li>
-          <li>3st</li>
+          <a className="ant-dropdown-trigger" onMouseOver={() => {
+            open_dropdown()
+
+          }} >
+            dropdown
+          </a>
         </div>
+        <div id="menu" className="hz-dropdown"  >
+          <ul id="menu_ui" className="hz-dropdown-menu">
+            <li id="menu_li" className="hz-dropdown-menu-item" ><a id="link">1st-----</a> </li>
+            <li id="menu_li" className="hz-dropdown-menu-item" ><a id="link">1st-----</a> </li>
+            <li id="menu_li" className="hz-dropdown-menu-item" ><a id="link">1st-----</a> </li>
+          </ul>
 
+        </div>
       </div>
-
     </>
 
 

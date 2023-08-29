@@ -1,48 +1,40 @@
 import styled from 'styled-components';
-
+import { slide_in,slide_out } from '../../style/motion/animation';
 // css
 const Btn = styled.div`
-  .hov{
-    color: #1677ff;
-    &:hover{
-      cursor:pointer;
-    }
-  }
-  .hov_before{
-    /* opacity: 0; */
+  ${slide_in}
+  ${slide_out}
+.ant-dropdown-trigger{
+  position:relative;
+}
+.hz-dropdown{
+    animation: slide_in 150ms;
+    margin: 0;
+    padding: 0; 
+    /* line-height: 1.5714285714285714; */
+    display: none;
+    list-style: none;
     position: absolute;
-    transform-origin: top center;
-    /* transition:delay 0.1s, transform 0.15s ease, opacity 0.15s ease; */
-    transform:scaleY(0);
-  }
-  .hov_after{
-    z-index:10;
-    transform:scaleY(1);
-    transform-origin: top center;
-    transition: transform 0.20s ease, opacity 0.20s ease;
-    cursor:pointer;
-    position: absolute;
+    z-index: 1050; 
+    /* padding: 4px; */
+  .hz-dropdown-menu{
     background: #fff;
-    opacity: 1;
-    width:${props => props.width}px;
-    border-radius: 6px;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
-     div{
-      margin: 4px 5px;
-      li{
-        &:hover{
-          z-index:999;
-          background: #f5f5f5;
-        }
-        border-radius: 4px;
+    border-radius: 5px;
+    list-style-type: none;
+    margin:0;
+    padding:5px;
+    box-shadow:0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    .hz-dropdown-menu-item{
+      cursor: pointer;
+      background: #fff;
+      border-radius: 4px;
+      &:hover{
+        background: #eee;
       }
-     }
-     
-  }
-  .menuItem{
-    /* display: none; */
-  }
-
+    }
+   } 
+  };
+ 
 `;
 
 export default Btn

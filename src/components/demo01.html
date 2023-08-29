@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./hehe.js"></script>
+
+  <style>
+
+ 
+    @keyframes slide_out {
+      0% {
+        transform: scaleY(1);
+        transform-origin: 0% 0%;
+        /* top: 0px; */
+        opacity: 1
+      }
+
+      100% {
+        transform: scaleY(0);
+        transform-origin: 0% 0%;
+        /* top: -200px; */
+        opacity: 0
+      }
+    }
+
+    .hehe {
+      /* animation-timing-function:linear; */
+      box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      /* animation: slide_in 190ms; */
+      animation-timing-function: ease-in-out;
+
+      /* position:relative; */
+
+    }
+  </style>
+</head>
+
+<body>
+  <span class="00" onclick="menu.style.display = 'block'">00000000000</span>
+  <span onclick="menu.style.animation='slide_out 1090ms',menu.style.display = 'none'">uuuuuuuuuuu</span>
+  <div id="menu" class="hehe" style="width: 200px;
+  height: 500px;background-color: #fff;display: none;">
+
+
+    hehe</div>
+  <script>
+
+
+
+
+
+  </script>
+</body>
+
+</html>
